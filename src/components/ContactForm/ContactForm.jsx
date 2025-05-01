@@ -1,10 +1,9 @@
 import { Button } from '../Button/Button';
 import css from './ContactForm.module.css';
-// 1. Імпортуємо хук
-import { useDispatch } from "react-redux";
-// 2. Імпортуємо фабрику екшену
 
-import { addContacts } from "../../redux/contactsSlice";
+import { useDispatch } from "react-redux";
+
+import { addContact  } from "../../redux/contactsOps";
 
 export const ContactForm = () => {
  
@@ -14,7 +13,7 @@ export const ContactForm = () => {
     event.preventDefault(); 
     const form = event.target;
   
-    dispatch(addContacts({
+    dispatch(addContact({
 	    id: crypto.randomUUID(),
 	 
         name: form.elements.name.value,

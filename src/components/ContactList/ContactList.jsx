@@ -1,12 +1,13 @@
 // 1. Імпортуємо хук
 import { useSelector } from 'react-redux';
+import { selectFilteredContacts } from '../../redux/contactsSlice';
 import { Contact } from '../Contact/Contact';
 import css from './ContactList.module.css';
 
 export const ContactList = () => {
 // console.log(contacts);
 
-  const contacts = useSelector(state => state.contacts.items);
+  const contacts = useSelector(selectFilteredContacts);
   const filter = useSelector(state => state.filters.name);
   
  const visibleContacts = contacts.filter(contact =>

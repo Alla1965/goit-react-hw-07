@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-// import { setNameFilter } from '../../redux/filtersSlice';
+
 const filtersSlice = createSlice({
   name: 'filters',
   initialState: {
-    name: '', // рядок пошуку за іменем
+    name: '',
   },
   reducers: {
     setNameFilter(state, action) {
@@ -15,3 +15,4 @@ const filtersSlice = createSlice({
 export const { setNameFilter } = filtersSlice.actions;
 
 export default filtersSlice.reducer;
+export const selectNameFilter = state => state.filters.name;
