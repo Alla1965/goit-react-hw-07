@@ -5,14 +5,8 @@ import { Contact } from '../Contact/Contact';
 import css from './ContactList.module.css';
 
 export const ContactList = () => {
-// console.log(contacts);
 
-  const contacts = useSelector(selectFilteredContacts);
-  const filter = useSelector(state => state.filters.name);
-  
- const visibleContacts = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(filter.toLowerCase())
-  );
+  const visibleContacts  = useSelector(selectFilteredContacts);
 
   return (
     <ul className={css.list}>
